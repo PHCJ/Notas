@@ -1,0 +1,22 @@
+<div class="container-sm">
+    <h2 class=" text-center m-5">Atualizar Nota</h2>
+    {{#each nota}}
+    {{#dataValues}}
+    <form action="/atualizar" method="POST">
+        <input type="hidden" name="id" class="form-control" id="nome" value="{{id}}">
+        <div class="mb-3">
+            <label for="titulo" class="col-form-label">Título:</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" value="{{titulo}}">
+        </div>
+        <div class="mb-3">
+            <label for="descricao" class="col-form-label">Descrição:</label>
+            <textarea name="descricao" class="form-control" id="descricao">{{descricao}}</textarea>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </form>
+    {{/dataValues}}
+    {{/each}}
+</div>
